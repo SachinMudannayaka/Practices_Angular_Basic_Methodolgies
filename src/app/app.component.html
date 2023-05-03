@@ -1,0 +1,29 @@
+<h1 [class.text-red]="bool">Angular App</h1>
+
+<h1 [style.color]=" bool?'red': 'blue' ">Style Binding</h1>
+
+<app-navbar></app-navbar>
+<h1>{{message}}</h1>
+<app-post [fromParent]='parentMessage' (messageEvent)='recieveMsg($event)'></app-post>
+<p>{{fromChildOutput}}</p>
+<!--String interpolation-->
+<h1>{{stringInterpolation}}</h1>
+
+<!--Property Binding-->
+<img src="{{imageUrl}}" alt="">
+<!--Another way -->
+<img [src]="imageUrl" alt="">
+
+<!--event Binding-->
+<button (click)="buttonClick()"> CLICK ME</button>
+
+<!--Event Filtering
+<input type="text" (keyup.enter)="onKeyUp(userName.value)" #userName>
+-->
+<!--Two way Binding-->
+<input type="text" [(ngModel)]="usersName" (keyup.enter)="onKeyUp()">
+
+<!--One way vs Two way Data Binding-->
+<input type="text" [value]=' someTXTVal' (keyup.enter)="onKeyUp()">
+<hr>
+<input type="text" [(ngModel)]="someTXTVal" (keyup.enter)="onKeyUp()">
